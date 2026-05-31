@@ -9,7 +9,6 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const application = new _1.app();
 async function startServer() {
-    await application.connectDatabase();
     const PORT = process.env.PORT;
     const server = http_1.default.createServer(application.getApp());
     server.listen(PORT, () => {

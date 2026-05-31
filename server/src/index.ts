@@ -1,5 +1,4 @@
 import express, { Application } from "express";
-import { ConnectDB } from "./config/db";
 import cors from "cors";
 import dotenv from "dotenv";
 import { userRouter } from "./presentation/routes/user";
@@ -28,8 +27,5 @@ export class app {
     public getApp(): Application {
         return this.app;
     }
-    public async connectDatabase() {
-        const db = new ConnectDB();
-        await db.connectDatabase();
-    }
+   
 }

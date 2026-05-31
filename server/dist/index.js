@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.app = void 0;
 const express_1 = __importDefault(require("express"));
-const db_1 = require("./config/db");
 const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const user_1 = require("./presentation/routes/user");
@@ -28,10 +27,6 @@ class app {
     }
     getApp() {
         return this.app;
-    }
-    async connectDatabase() {
-        const db = new db_1.ConnectDB();
-        await db.connectDatabase();
     }
 }
 exports.app = app;
